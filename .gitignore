@@ -1,7 +1,5 @@
 build/
 /tags
 /bazel-*
-bin
-bin-int
 Yaml.vcxproj
 Yaml.vcxproj.filters
