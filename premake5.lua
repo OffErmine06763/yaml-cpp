@@ -1,6 +1,8 @@
 project "Yaml"
 	kind "StaticLib"
 	language "C++"
+	cppdialect "C++20"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -8,21 +10,27 @@ project "Yaml"
 	files
 	{
 		"src/**.h",
-    "src/**.cpp",
+		"src/**.cpp",
 
-    "include/**.h"
+		"include/**.h"
+	}
+
+	includedirs
+	{
+		"include"
+	}
+
+	defines
+	{
+		"YAML_CPP_STATIC_DEFINE"
 	}
 
 	filter "system:windows"
 		systemversion "latest"
-		cppdialect "C++20"
-		staticruntime "on"
 
-  filter "system:linux"
+	filter "system:linux"
 		pic "On"
 		systemversion "latest"
-		cppdialect "C++20"
-		staticruntime "On"
 
 	filter "configurations:Debug"
 		runtime "Debug"
