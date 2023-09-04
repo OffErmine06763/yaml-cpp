@@ -5,3 +5,4 @@ bin
 bin-int
 Yaml.vcxproj
 Yaml.vcxproj.filters
+Yaml.vcxproj.users
